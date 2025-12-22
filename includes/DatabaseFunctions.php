@@ -66,4 +66,35 @@ function deletePet(PDO $pdo, int $petID): void {
   $stmt = $pdo->prepare("DELETE FROM pets WHERE petID = ?");
   $stmt->execute([$petID]);
 }
+
+function getPetById(PDO $pdo, int $petID): ?array {
+  $stmt = $pdo->prepare("SELECT petID, nickname, gender, origin, type, breedID, img, dateAdded FROM pets WHERE petID = ?");
+  $stmt->execute([$petID]);
+  $pet = $stmt->fetch(PDO::FETCH_ASSOC);
+  return $pet ?: null;
+}
+
+function petExists(PDO $pdo, int $petID): bool {
+  $stmt = $pdo->prepare("SELECT 1 FROM pets WHERE petID = ? LIMIT 1");
+  $stmt->execute([$petID]);
+  return (bool)$stmt->fetchColumn();
+}
+
+function updatePet(PDO $pdo, array $data): void {
+  $stmt = $pdo->prepare("
+    UPDATE pets
+    SET nickname = ?, gender = ?, origin = ?, type = ?, breedID = ?, img = ?, dateAdded = ?
+    WHERE petID = ?
+  ");
+  $stmt->execute([
+    $data['nickname'],
+    $data['gender'],
+    $data['origin'],
+    $data['type'],
+    $data['breedID'],
+    $data['img'],
+    $data['dateAdded'],
+    $data['petID'],
+  ]);
+}
 ?>

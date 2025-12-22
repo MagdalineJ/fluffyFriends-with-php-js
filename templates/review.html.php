@@ -26,17 +26,26 @@
 
                   <!-- delete review features -->
         <?php
-$isLoggedIn = !empty($_SESSION['user']);
-$isAdmin = $isLoggedIn && ($_SESSION['user']['role'] === 'admin');
-$isOwner = $isLoggedIn && ((int)$r['user_id'] === (int)$_SESSION['user']['id']);
-?>
+          $isLoggedIn = !empty($_SESSION['user']);
+          $isAdmin = $isLoggedIn && ($_SESSION['user']['role'] === 'admin');
+          $isOwner = $isLoggedIn && ((int)$r['user_id'] === (int)$_SESSION['user']['id']);
+        ?>
 
-<?php if ($isAdmin || $isOwner): ?>
-  <form method="post" action="deleteReview.php" onsubmit="return confirm('Delete this review?');">
-    <input type="hidden" name="reviewID" value="<?= (int)$r['reviewID'] ?>">
-    <button class="btn btn-outline-danger btn-sm mt-2"><i class="fa-solid fa-trash"></i></button>
-  </form>
-<?php endif; ?>
+        <?php if ($isAdmin || $isOwner): ?>
+          <form method="post" action="deleteReview.php" onsubmit="return confirm('Delete this review?');">
+          <input type="hidden" name="reviewID" value="<?= (int)$r['reviewID'] ?>">
+          <button class="btn btn-outline-danger btn-sm mt-2"><i class="fa-solid fa-trash"></i></button>
+          </form>
+        <?php endif; ?>
+
+                  <!-- edit review features -->
+        <?php if ($isAdmin || $isOwner): ?>
+          <a class="btn btn-outline-primary btn-sm mt-2"
+            href="review_edit.php?id=<?= (int)$r['reviewID'] ?>">
+            <i class="fa-solid fa-pen"></i>
+          </a>
+        <?php endif; ?>         
+
 
         <!-- ----------------------- -->
           </div>
@@ -45,7 +54,7 @@ $isOwner = $isLoggedIn && ((int)$r['user_id'] === (int)$_SESSION['user']['id']);
     <?php endif; ?>
   </div>
 
-  <div class="col-md-6 mt-5 border-start">
+  <div class="col-md-6 mt-5 border-start ">
     <h2 class="text-success">Add a Review</h2>
 
     <form method="post" action="addReview.php">
@@ -81,7 +90,7 @@ $isOwner = $isLoggedIn && ((int)$r['user_id'] === (int)$_SESSION['user']['id']);
         </select>
       </div>
 
-      <button class="btn btn-success w-100">Submit Review</button>
+      <button class="btn btn-success w-50">Submit Review</button>
     </form>
   </div>
 </div>

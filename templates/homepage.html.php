@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-md wave-nav fixed-top">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="index.php" id="brand">
+    <a class="navbar-brand text-success" href="index.php" id="brand">
       Fluffy Friends <i class="fa-solid fa-paw"></i>
     </a>
 

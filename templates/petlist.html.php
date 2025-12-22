@@ -7,7 +7,7 @@
   <!-- Admin: Add Pet -->
   <?php if (!empty($isAdmin)): ?>
     <div class="d-flex justify-content-end mb-3">
-      <a href="admin_add_pet.php" class="btn fw-bold btn-outline-success btn-sm">
+      <a href="admin_pet_form.php" class="btn fw-bold btn-outline-success btn-sm">
         <i class="fa-solid fa-plus"></i> Add Pet
       </a>
     </div>
@@ -74,6 +74,14 @@
                       </button>
                     </div>
                   </form>
+                <?php endif; ?>
+
+                <!-- Admin: Edit Pet -->
+                <?php if (!empty($isAdmin)): ?>
+                  <a class="btn btn-outline-success btn-sm w-50 mt-2 mx-auto"
+                    href="admin_pet_form.php?id=<?= (int)$pet['petID'] ?>" >
+                    <i class="fa-solid fa-pen"></i> Edit Pet
+                  </a>
                 <?php endif; ?>
 
               </div>
