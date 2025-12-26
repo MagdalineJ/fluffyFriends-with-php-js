@@ -69,7 +69,7 @@
               </li>
             <?php else: ?>
               <li id="log-in">
-                <a class="dropdown-item" href="login.php">Login</a>
+                <a class="dropdown-item" href="login.php">Log in</a>
               </li>
               <li>
                 <a class="dropdown-item" href="signup.php">Sign up</a>
