@@ -15,7 +15,7 @@ $title = 'Quote Sent';
 
 ob_start();
 ?>
-<div class="container my-5 text-center">
+<div class="container text-center" style="margin-top:120px;" >
   <h2 class="text-success">Quote Sent Successfully!</h2>
   <p>Quote ID: <strong><?= (int)$data['quote_id'] ?></strong></p>
   <p>Confirmation sent to <strong><?= htmlspecialchars($data['email'], ENT_QUOTES, 'UTF-8') ?></strong></p>

@@ -5,7 +5,7 @@
 
   <?php if (empty($petsInCart)): ?>
     <div class="text-center text-muted my-5">
-      <h4>Your cart is empty 😿</h4>
+      <h5>Your cart is empty 😿</h5>
     </div>
   <?php else: ?>
 

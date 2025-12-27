@@ -15,12 +15,12 @@
 <nav class="navbar navbar-expand-md wave-nav fixed-top">
   <div class="container-fluid">
 
-    <a class="navbar-brand text-success" href="index.php" id="brand">
+    <a class="navbar-brand" href="index.php" id="brand">
       Fluffy Friends <i class="fa-solid fa-paw"></i>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-label="Toggle navigation menu">
+      <span class="navbar-toggler-icon" aria-hidden="true"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -61,7 +61,7 @@
             <li><hr class="dropdown-divider"></li>
 
             <?php if (!empty($isLoggedIn)): ?>
-              <li id="log-in" class="dropdown-item-text">
+              <li id="log-in" class="dropdown-item-text text-danger">
                 Hi, <?= htmlspecialchars($_SESSION['user']['name']) ?>
               </li>
               <li>

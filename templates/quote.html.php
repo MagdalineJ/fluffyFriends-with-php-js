@@ -1,4 +1,6 @@
-<h2 class="m-4">Request a Quote</h2>
+<h2 class="text-success" style="margin-top:150px; text-align:center; ">Request a Quote</h2>
+
+
 
 <?php if (!empty($errors)): ?>
   <div class="alert alert-danger m-3">
@@ -10,7 +12,7 @@
   </div>
 <?php endif; ?>
 
-<form method="post" action="sendquote.php" class="m-3">
+<form method="post" action="sendquote.php" class="mx-auto w-50">
 
   <label class="form-label" for="email">Your Email:</label>
   <input
@@ -55,10 +57,13 @@ Nothing selected
   <?= empty($petsInCart) ? 'disabled' : '' ?>
 >
   Proceed with Quote
-</button>
+</button> <br>
+
 <?php if (empty($petsInCart)): ?>
   <p class="text-muted mt-2">
     Please select at least one pet on New Friends before requesting a quote.
   </p>
 <?php endif; ?>
+  <a href="petlist.php" class="btn btn-success mt-2">Back to Pets</a>
+
 </form>
