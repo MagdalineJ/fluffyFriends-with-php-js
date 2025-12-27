@@ -34,7 +34,7 @@
         <?php if ($isAdmin || $isOwner): ?>
           <form method="post" action="deleteReview.php" onsubmit="return confirm('Delete this review?');">
           <input type="hidden" name="reviewID" value="<?= (int)$r['reviewID'] ?>">
-          <button class="btn btn-outline-danger btn-sm mt-2"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-outline-danger btn-sm mt-2"><i class="fa-solid fa-trash"></i> Delete</button>
           </form>
         <?php endif; ?>
 
@@ -42,7 +42,7 @@
         <?php if ($isAdmin || $isOwner): ?>
           <a class="btn btn-outline-primary btn-sm mt-2"
             href="review_edit.php?id=<?= (int)$r['reviewID'] ?>">
-            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-pen"></i> Edit
           </a>
         <?php endif; ?>         
 
@@ -60,17 +60,17 @@
     <form method="post" action="addReview.php">
       <div class="mb-3">
         <label>Your Name</label>
-        <input type="text" name="name" class="form-control" required>
+        <input type="text" name="name" label="username" class="form-control" required>
       </div>
 
       <div class="mb-3">
         <label>Your Review</label>
-        <textarea name="review" class="form-control" required></textarea>
+        <textarea name="review" label="written review" class="form-control" required></textarea>
       </div>
 
       <div class="mb-3">
         <label>Pet Breed</label>
-        <select name="breedID" class="form-select" required>
+        <select name="breedID" label="breeds category" class="form-select" required>
           <option value="">Select breed</option>
           <option value="1">Dog</option>
           <option value="2">Cat</option>
@@ -80,7 +80,7 @@
 
       <div class="mb-3">
         <label>Rating</label>
-        <select name="rating" class="form-select" required>
+        <select name="rating"  label="rating category" class="form-select" required>
           <option value="">Select rating</option>
           <option value="1">1 ★</option>
           <option value="2">2 ★★</option>

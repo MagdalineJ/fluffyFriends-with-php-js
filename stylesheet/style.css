@@ -1,11 +1,12 @@
 
+body{
+  background-color: #f2f8de;
+  font-size:large;
+}
 nav {
     box-shadow: 0 5px  #1b723658;
+    background-color: #fcf5cb;
 }
-/* .navbar-brand #brand{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- font-size:large;
-} */
 
 .dropdown-menu{
   background-color: #f9f8e2; 
