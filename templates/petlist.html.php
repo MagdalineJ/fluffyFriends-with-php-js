@@ -28,12 +28,12 @@
           <div class="col pet-card">
             <div class="card h-100 shadow-sm">
 
-              <img
-                src="pic/pets/<?= htmlspecialchars($pet['img'], ENT_QUOTES, 'UTF-8') ?>"
-                class="card-img-top"
-                style="width:100%; height:350px; object-fit:cover;"
-                alt="<?= htmlspecialchars($pet['nickname'], ENT_QUOTES, 'UTF-8') ?>"
-              >
+            <img
+            src="pic/pets/<?= htmlspecialchars($pet['img'], ENT_QUOTES, 'UTF-8') ?>"
+            class="card-img-top"
+            style="width:100%; height:350px; object-fit:cover;"
+            alt="Photo of a <?= htmlspecialchars($pet['category'], ENT_QUOTES, 'UTF-8') ?>(<?= htmlspecialchars($pet['type'], ENT_QUOTES, 'UTF-8') ?> breed)"
+            >
 
               <div class="card-body d-flex flex-column">
 
